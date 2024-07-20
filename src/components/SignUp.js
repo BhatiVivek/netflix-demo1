@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
@@ -6,6 +6,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handdleOnLinkClick = (e) => {
+
     navigate("/login");
   }
 

@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 const Login = () => {
-  const [isSignIn, setIsSignIn] = useState(true);
   const navigate = useNavigate();
 
   const handdleOnLinkClick = (e) => {
