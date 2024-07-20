@@ -24,15 +24,15 @@ const Login = () => {
             </h1>
             <input type="text" placeholder='Email or Phone Nubmer' className='p-4 my-4 w-full bg-inherit border-2 rounded-md border-slate-700'/>
             <input type="text" placeholder='Password' className='p-4 my-4 w-full bg-inherit border-2 rounded-md border-slate-700'/>
-            <button className='p-4 my-4 bg-red-700 w-full'>
+            <button className='p-4 my-4 bg-red-700 w-full rounded-lg font-bold'>
               Sign In
             </button>
             <label>
-                New to Netflix ? 
-                <button onClick={(e) => handdleOnLinkClick(e)}>
-                  SignUp here
-                </button>
+                New to Netflix ?
             </label>
+            <button className="hover:underline text-red-500 font-bold ml-8" onClick={(e) => handdleOnLinkClick(e)}>
+                SignUp here
+            </button>
         </form>
         
     </div>

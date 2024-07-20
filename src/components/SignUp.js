@@ -17,25 +17,56 @@ const Login = () => {
                 alt="image-logo"
             />
         </div>
-        <form className='w-3/12 p-12 absolute bg-black mx-auto left-0 right-0 my-36 opacity-90 text-white'>
-            <h1 className='py-4 font-bold text-3xl w-full'>
-              Sign Up
-            </h1>
-            <input type="text" placeholder='User Name' className='p-4 my-4 w-full bg-inherit border-2 rounded-md border-slate-700'/>
-            <input type="text" placeholder='Email or Phone Nubmer' className='p-4 my-4 w-full bg-inherit border-2 rounded-md border-slate-700'/>
-            <input type="text" placeholder='Password' className='p-4 my-4 w-full bg-inherit border-2 rounded-md border-slate-700'/>
-            <button className='p-4 my-4 bg-red-700 w-full'>
-              Sign Up
-            </button>
-            <label>
-                Already a User ? 
-                <button onClick={(e) => handdleOnLinkClick(e)}>
-                 SignIn here
-                </button>
-            </label>
-        </form>
-        
-    </div>
+        <div className='w-9/12 p-12 absolute bg-black mx-auto left-0 right-0 my-36 opacity-90 text-white flex'>
+            <form className='w-6/12'>
+                <div className="w-full flex">
+                    <h1 className='py-4 font-bold text-3xl w-full'>
+                    Sign Up
+                    </h1>
+                </div>
+                <div className='w-full flex'>
+                    <input type="text" placeholder='First Name' className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='Last Name' className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                </div>
+                <div className='w-full flex'>
+                    <input type="text" placeholder='Email Id' className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='Phone Number' className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                </div>
+                <div className='w-full flex'>
+                    <input type="text" placeholder='Password' className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='Confirm Password' className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                </div>
+                <div className="m-auto left-0 right-0  w-6/12">
+                    <button className="w-full p-4 my-4 bg-red-700 rounded-lg font-bold">
+                        Sign Up
+                    </button>
+                </div>
+            </form>
+            <div className='h-full w-6/12'>
+                <div className='border-2 m-8 p-6 border-blue-500 border-solid rounded-lg'>
+                    <label className="w-4/12 text-center">
+                        Already registered User
+                    </label>
+                    <button className="hover:underline text-red-500 font-bold ml-8" onClick={(e) => handdleOnLinkClick(e)}>
+                        SignIn here
+                    </button>
+                </div>
+                <div className='border-2 m-8 p-6 border-blue-500 border-solid rounded-lg'>
+                    <div className='font-bold text-xl'>Registration Guide</div>
+                    <hr className="mt-8 mb-8"/>
+                    <div>To register, please provide the following details:</div>
+                    <ul>
+                        <li>First Name</li>
+                        <li>Last Name</li>
+                        <li>Email Address</li>
+                        <li>Phone Number</li>
+                        <li>Password</li>
+                        <li>Confirm Password</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
   )
 }
 
