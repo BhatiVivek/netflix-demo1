@@ -33,7 +33,6 @@ const Login = () => {
                 SignUp here
             </button>
         </form>
-        
     </div>
   )
 }
