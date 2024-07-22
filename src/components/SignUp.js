@@ -6,7 +6,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handdleOnLinkClick = (e) => {
-
     navigate("/login");
   }
 
@@ -44,19 +43,19 @@ const Login = () => {
                 </div>
             </form>
             <div className='h-full w-6/12'>
-                <div className='border-2 m-8 p-6 border-blue-500 border-solid rounded-lg'>
-                    <label className="w-4/12 text-center">
+                <div className='border-2 m-8 p-6 border-white border-solid rounded-lg bg-white opacity-80'>
+                    <label className="w-4/12 text-center text-black">
                         Already registered User
                     </label>
                     <button className="hover:underline text-red-500 font-bold ml-8" onClick={(e) => handdleOnLinkClick(e)}>
                         SignIn here
                     </button>
                 </div>
-                <div className='border-2 m-8 p-6 border-blue-500 border-solid rounded-lg'>
-                    <div className='font-bold text-xl'>Registration Guide</div>
+                <div className='border-2 m-8 p-6 border-white border-solid rounded-lg bg-white opacity-80'>
+                    <div className='font-bold text-xl text-black'>Registration Guide</div>
                     <hr className="mt-8 mb-8"/>
-                    <div>To register, please provide the following details:</div>
-                    <ul>
+                    <div className='text-black'>To register, please provide the following details:</div>
+                    <ul className='text-black'>
                         <li>First Name</li>
                         <li>Last Name</li>
                         <li>Email Address</li>
