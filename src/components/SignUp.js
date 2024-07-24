@@ -17,8 +17,8 @@ const Login = () => {
                 alt="image-logo"
             />
         </div>
-        <div className='w-9/12 p-12 absolute bg-black mx-auto left-0 right-0 my-36 opacity-90 text-white flex'>
-            <form className='w-6/12'>
+        <div className='lg:w-9/12 sm:w-full p-12 absolute bg-black mx-auto left-0 right-0 my-36 opacity-90 text-white flex'>
+            <form className='lg:w-6/12 sm:w-full'>
                 <div className="w-full flex">
                     <h1 className='py-4 font-bold text-3xl w-full'>
                     Sign Up
@@ -42,7 +42,7 @@ const Login = () => {
                     </button>
                 </div>
             </form>
-            <div className='h-full w-6/12'>
+            <div className='lg:w-6/12 sm:w-full h-full'>
                 <div className='border-2 m-8 p-6 border-white border-solid rounded-lg bg-white opacity-80'>
                     <label className="w-4/12 text-center text-black">
                         Already registered User
