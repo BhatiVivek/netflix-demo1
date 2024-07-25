@@ -1,40 +1,68 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import Header from './Header';
+import { auth } from '../utils/firebase';
+import BgImage from '../utils/images/netflix-bg-image.jpg';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [userDetails, setUserDetails] = useState({ email: "", password: ""});
 
   const handdleOnLinkClick = (e) => {
     navigate("/login");
+  }
+
+  const handleOnSignUpClick = (e) => {
+    e.preventDefault();
+    console.log(userDetails);
+    
+    createUserWithEmailAndPassword(auth, userDetails.email, userDetails.password)
+    .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("user", user);
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("error", errorMessage)
+    });
+  }
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails({
+        ...userDetails,
+        [name]: value,
+    })
   }
 
   return (
     <div>
         <Header />
         <div className='absolute'>
-            <img src="https://assets.nflxext.com/ffe/siteui/vlv3/8728e059-7686-4d2d-a67a-84872bd71025/e90516bd-6925-4341-a6cf-0b9f3d0c140a/IN-en-20240708-POP_SIGNUP_TWO_WEEKS-perspective_WEB_34324b52-d094-482b-8c2a-708dc64c9065_small.jpg" 
+            <img src={BgImage} 
                 alt="image-logo"
             />
         </div>
         <div className='lg:w-9/12 sm:w-full p-12 absolute bg-black mx-auto left-0 right-0 my-36 opacity-90 text-white flex'>
-            <form className='lg:w-6/12 sm:w-full'>
+            <form onSubmit={handleOnSignUpClick} className='lg:w-6/12 sm:w-full'>
                 <div className="w-full flex">
                     <h1 className='py-4 font-bold text-3xl w-full'>
                     Sign Up
                     </h1>
                 </div>
                 <div className='w-full flex'>
-                    <input type="text" placeholder='First Name' className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
-                    <input type="text" placeholder='Last Name' className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='First Name' onChange={handleOnChange} name="f_name" className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='Last Name' onChange={handleOnChange} name="l_name" className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
                 </div>
                 <div className='w-full flex'>
-                    <input type="text" placeholder='Email Id' className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
-                    <input type="text" placeholder='Phone Number' className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='Email Id' name="email" onChange={handleOnChange} className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='Phone Number' name="phone" onChange={handleOnChange} className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
                 </div>
                 <div className='w-full flex'>
-                    <input type="text" placeholder='Password' className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
-                    <input type="text" placeholder='Confirm Password' className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='Password' onChange={handleOnChange} name="password" className='w-6/12 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
+                    <input type="text" placeholder='Confirm Password' onChange={handleOnChange} name="confirm_password" className='w-6/12 ml-8 p-4 my-4 bg-inherit border-2 rounded-md border-slate-700'/>
                 </div>
                 <div className="m-auto left-0 right-0  w-6/12">
                     <button className="w-full p-4 my-4 bg-red-700 rounded-lg font-bold">
