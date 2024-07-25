@@ -1,9 +1,9 @@
 import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Login from './Login';
 import Browse from './Browse';
 import SignUp from "./SignUp";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const Body = () => {
 

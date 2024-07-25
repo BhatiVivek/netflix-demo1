@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
+
 import Header from './Header';
 import { auth } from '../utils/firebase';
 import BgImage from '../utils/images/netflix-bg-image.jpg';
